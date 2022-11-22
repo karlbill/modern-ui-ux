@@ -104,6 +104,52 @@ Now we have all the structure of the application project ready to be developed:
 Obs: the question is: how these elements were chosen as containers or components? Header, Footer and Blog is clearly sections of the page, so it's clearly containers; Brand is clearly a component but the other ones are not so clear like that. 
 > Let's continue and see if this question will be answered in future.
 
+## CSS style for general components
+To define a general style for the project, we have to use a stylesheet for the App.js component, that is the general component of the project. And, another stylesheet for the index.js component, that we will name it as index.css component. 
+> See that we informed App as a className of the main div inside the App.js component. So, we need to create the App.css file in src folder, corresponding to this className that will be evolving all another stylesheet of the project (the parent of those stylesheets).
+1. App.css code:
+```
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-bg);
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+```
+> The * means that all components will be defined by that style. </br>
+> The background of the body page will receive the variable --color-bg, defined in the index.css file. 
+
+2. index.css code:
+```
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-family: 'Manrope', sans-serif;
+
+  --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
+  
+  --color-bg: #040C18;
+  --color-footer : #031B34;
+  --color-blog: #042c54;
+  --color-text: #81AFDD;
+  --color-subtext: #FF8A71;
+}
+```
+> Import the App.css file in the App.js component and the index.css file in the index.js component.
+
+## Creating a gradient for the background page
+Link: https://angrytools.com/gradient
+
 ## Developing the first container: Navbar
 
 
@@ -119,7 +165,7 @@ Obs: the question is: how these elements were chosen as containers or components
 
 #### Shortcuts for VS Code
 1. Selecting the same word in a file: double click on the word + **CTRL** + **D** (as many as equal words you would like to select)
-2. Copying a line below: **ALT** + **SHIFT** + **UP/DOWN ARROW**
+2. Copying a line and paste it below: **ALT** + **SHIFT** + **UP/DOWN ARROW**
 
 ## Referency:
 JavaScript Mastery (Youtube Channel): https://www.youtube.com/watch?v=F627pKNUCVQ&t=7624
